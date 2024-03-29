@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Random Number Generator</title>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Arial, sans-serif;
+                background-color: black; /* Netflix red */
+                color: white;
+            }
+            .container {
+                text-align: center;
+            }
+            #number {
+                font-size: 3em;
+                margin-bottom: 20px;
+            }
+            #generate {
+                padding: 10px 20px;
+                font-size: 1.2em;
+                background-color: #e50914; /* Netflix red variant */
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            #generate:hover {
+                background-color: #ff0000; /* Brighter Netflix red */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="number">Click the button to generate a number!</div>
+            <button id="generate" onclick="generateNumber()">
+                Generate Number
+            </button>
+        </div>
+
+        <script>
+            function generateNumber() {
+                var randomNumber = Math.random();
+                var number;
+
+                // 30% chance of getting 37
+                if (randomNumber < 0.3) {
+                    number = 37;
+                } else {
+                    // Generate a random number between 1 and 100
+                    number = Math.floor(Math.random() * 100) + 1;
+                }
+
+                document.getElementById('number').innerText = number;
+            }
+        </script>
+    </body>
+</html>
